@@ -89,6 +89,5 @@ func MaxPossibleDose(values []int) int { // в 1.21.3 есть либа slices �
 }
 
 func main() {
-
 	fmt.Println(Prescribe(1000, 15, 63))
 }
