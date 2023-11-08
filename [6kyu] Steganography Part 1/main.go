@@ -53,10 +53,11 @@ func Conceal(msg string, pixels [][]uint8) [][]uint8 {
 	if int((len(pixels))/3) < len(msg) {
 		return nil
 	}
-
-	var n byte = 204 // байт для инжекции
-	var sn [8]byte   // маска из 8 байтов, полученная из n
-	var tp pixel3    // входной массив, трёх пикселей RGB
+	/*
+		var n byte = 204 // байт для инжекции
+		var sn [8]byte   // маска из 8 байтов, полученная из n
+		var tp pixel3    // входной массив, трёх пикселей RGB
+	*/
 
 }
 
