@@ -5,14 +5,6 @@ import (
 	//"strconv"
 )
 
-func getBits(b byte) [8]byte {
-	var sb [8]byte
-	for i := 0; i < 8; i++ {
-		sb[7-i] = byte(int(b)>>i) & 1
-	}
-	return [8]byte(sb)
-}
-
 func inject(orig [][]uint8, mask [8]uint8) [][]uint8 {
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 3; j++ {
@@ -31,24 +23,30 @@ func inject(orig [][]uint8, mask [8]uint8) [][]uint8 {
 	return orig
 }
 
-// пихаем по байту в каждые 3 пикселя
+// пихаем по байту входной строки в каждые 3 пикселя
 func Conceal(msg string, pixels [][]uint8) [][]uint8 {
-	// массив из трёх пикселей RGB на корм inject()
-	var tp = [][]uint8{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+
+	var tp = [][]uint8{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}} // массив из трёх пикселей RGB
+	var mask [8]byte                                    // маска для наложения на пиксель
 
 	if int((len(pixels))/3) < len(msg) {
 		return nil
 	}
 
 	for i := 0; i < len(msg); i++ {
-		for j := 0; j < 3; j++ {
-			tp[j] = pixels[i*3+j]
-		}
-		tp = inject(tp, getBits(msg[i]))
-		for j := 0; j < 3; j++ {
-			pixels[i*3+j] = tp[j]
+		for b := 0; b < 8; b++ { // получаем маску из очередного символа строки
+			mask[7-b] = byte(int(msg[i])>>b) & 1
 		}
 
+		for j := 0; j < 3; j++ { // всасываем 3 пикселя из массива
+			tp[j] = pixels[i*3+j]
+		}
+
+		tp = inject(tp, mask) // накладываем маску на пиксели
+
+		for j := 0; j < 3; j++ {
+			pixels[i*3+j] = tp[j] // кладём пиксели взад
+		}
 	}
 	return pixels
 }
