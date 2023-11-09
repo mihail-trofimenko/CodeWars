@@ -1,0 +1,25 @@
+Steganography Part 2
+Part 1 - https://www.codewars.com/kata/624fc787983b3500648faf11
+Steganography is the practice of concealing a message within another medium. 
+In Part 1, we concealed a message into pixels. In this case, we have pixels that 
+already have a message concealed in them and we want to extract the message back out.
+
+Your function will take the 2D array pixels and reconstruct the message using 
+each pixel color's Least Significant Bit, returning the message.
+
+Notes
+You can assume that the pixels inner array always has a length of 3 (for Red, Green, Blue).
+Since bytes are 8 bits long and pixels are in groups of 3, every 3rd pixel group's last color 
+should be skipped.
+With input:
+
+pixels = [
+  [200,213,128],[8,71,54],[154,124,135],
+  [138,175,117],[64,98,137],[142,191,5],
+  [120,113,209],[20,167,193],[38,146,171],
+  [88,235,147],[180,221,49],[24,186,226],
+  [244,215,195],[114,19,67],[101,161,57],
+]
+An example output will look like:
+
+output = "Hello"
