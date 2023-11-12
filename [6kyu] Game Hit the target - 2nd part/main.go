@@ -2,15 +2,16 @@ package main
 
 import "fmt"
 
-var arrow struct {
-	x         int
-	y         int
-	dir_x     int
-	direction string ""
-	aimed     bool
-}
-
 func Solution(mtrx [][]rune) bool {
+
+	var arrow struct {
+		x         int
+		y         int
+		dir_x     int
+		direction string ""
+		aimed     bool
+	}
+
 	arrow.direction = ""
 	arrow.aimed = false
 	fmt.Println()
@@ -85,7 +86,7 @@ func Solution(mtrx [][]rune) bool {
 func main() {
 
 	mtrx := [][]rune{
-		{'^', ' ', ' '},
+		{'v', ' ', ' '},
 		{'x', ' ', ' '},
 		{' ', ' ', ' '}}
 	fmt.Println(Solution(mtrx))
