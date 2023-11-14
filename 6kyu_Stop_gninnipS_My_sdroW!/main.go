@@ -33,4 +33,5 @@ func main() {
 	refString := "Burgers are my favorite fruit"
 
 	fmt.Println(SpinWords(refString))
+
 }
