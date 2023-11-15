@@ -16,7 +16,7 @@ func FirstNonRepeating(str string) string {
 				break
 			}
 		}
-		if repeating == false {
+		if !repeating {
 			return string(r0)
 		}
 	}
