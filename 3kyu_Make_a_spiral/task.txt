@@ -27,3 +27,10 @@ given size 5 result should be:
 Because of the edge-cases for tiny spirals, the size will be at least 5.
 
 General rule-of-a-thumb is, that the snake made with '1' cannot touch to itself.
+
+=================================================
+* мой алгоритм легко адаптируется для любой     * 
+* прямоугольной спирали, не только квадратной.  * 
+* из этого можно состряпать свою кату           * 
+=================================================
+
