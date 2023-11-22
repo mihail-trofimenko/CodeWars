@@ -36,7 +36,7 @@ func FormatDuration(seconds int64) string {
 
 	var M int64 = 60       // 	seconds per minute
 	var H int64 = 3600     // 	seconds per hour
-	var D int64 = 84600    // 	seconds per day
+	var D int64 = 86400    // 	seconds per day
 	var Y int64 = 31536000 // 	seconds per year
 
 	years := int64(seconds / Y)
@@ -78,7 +78,7 @@ func FormatDuration(seconds int64) string {
 }
 
 func main() {
-	const M, H, D, Y int64 = 60, 3600, 84600, 31536000
+	const M, H, D, Y int64 = 60, 3600, 86400, 31536000
 	fmt.Println(FormatDuration(0*Y + 182*D + 1*H + 44*M + 40))
 	fmt.Println(FormatDuration(15731080))
 }
