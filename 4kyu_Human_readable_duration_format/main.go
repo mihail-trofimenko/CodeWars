@@ -32,12 +32,13 @@ func addSepar(s []string) string {
 
 func FormatDuration(seconds int64) string {
 
+	fmt.Println("Seconds:", seconds)
+
 	var M int64 = 60       // 	seconds per minute
 	var H int64 = 3600     // 	seconds per hour
 	var D int64 = 84600    // 	seconds per day
 	var Y int64 = 31536000 // 	seconds per year
 
-	fmt.Println("Seconds:", seconds)
 	years := int64(seconds / Y)
 	seconds -= years * Y
 	days := int64(seconds / D)
