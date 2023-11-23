@@ -1,0 +1,19 @@
+Your task is to return the amount of white rectangles in a NxN spiral. 
+Your font may differ, if we talk of white rectangles, we talk about the symboles in the top row.
+
+Notes:
+As a general rule, the white snake cannot touch itself.
+The size will be at least 5.
+The test cases get very large, it is not feasible to calculate the solution with a loop.
+Examples
+For example, a spiral with size 5 should look like this:
+
+⬜⬜⬜⬜⬜
+⬛⬛⬛⬛⬜
+⬜⬜⬜⬛⬜
+⬜⬛⬛⬛⬜
+⬜⬜⬜⬜⬜
+
+And return the value 17 because the total amount of white rectangles is 17.
+
+да ну нахер
