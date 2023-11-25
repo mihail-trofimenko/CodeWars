@@ -21,5 +21,5 @@ func Rot13(msg string) string {
 }
 
 func main() {
-	fmt.Println(Rot13("'Twas brillig and the slithy gopher..."))
+	fmt.Println(Rot13("adasd"))
 }
